@@ -7,7 +7,7 @@ const deleteUserName = require('./controller/DeleteUserProfileName');
 require('dotenv').config();
 const app = express();
 const Port = process.env.Port || 3000;
-
+app.use(cors());
 
 app.use(express.json());
 
@@ -17,8 +17,10 @@ app.use('/getUserSiteName',getUserSiteName);
 app.use('/createUserName',createUserSiteName);
 app.use('/deleteUserName', deleteUserName);
 
+app.get("/", (req,res)=>{
+    res.send("THIS IS HOMe Pgaeg");
+});
 
-
-app.listen("https://code-miner-backend-zm54.vercel.app", () => {
+app.listen(PORT, () => {
     console.log("Server started on port 3000");
 });
