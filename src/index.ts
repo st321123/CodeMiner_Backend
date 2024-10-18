@@ -19,6 +19,6 @@ app.use('/deleteUserName', deleteUserName);
 
 
 
-app.listen(Port, () => {
+app.listen("https://code-miner-backend-zm54.vercel.app", () => {
     console.log("Server started on port 3000");
 });
